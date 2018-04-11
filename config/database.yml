@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  pool: 5 # not mandatory
+  timeout: 5000 # not mandatory
+  prepared_statements: false
+
+development:
+  <<: *default
+  database: PMS_development
+  username: postgres1
+  password: postgres
+  host: localhost # not mandatory
+  sslmode: disable
+
+test:
+  <<: *default
+  database: PMS_test
+  username: postgres1
+  password: postgres
+  host: localhost # not mandatory
+  sslmode: disable
